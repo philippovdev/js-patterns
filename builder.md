@@ -6,10 +6,10 @@
 - Instead, opt for piecewise construction
 - Builder provides an API for constructing an object step-by-step
 
-DEFINITION
+## DEFINITION
 When piecewise object construction is complicated, provide an API for doing it succictly.
 
-Practice
+## Practice
 
 ```javascript
 class Tag
@@ -127,7 +127,7 @@ builder
 console.log(builder.toString());
 ```
 
-Person builder
+## Person builder
 
 ```javascript
 class Person
@@ -232,7 +232,7 @@ let person = pb
 console.log(person.toString());
 ```
 
-Object builder
+## Object builder
 
 ```javascript
 class CodeBuilder
@@ -280,3 +280,10 @@ class CodeBuilder
   }
 }
 ```
+
+## Conclusion 
+
+- A builder is a separate component fo building an object
+- Can eather give builder an initializer or return it via a static function
+- To make builder fluent, return self
+- Different facets of an object can be built with different builders working in tandem via a base class
