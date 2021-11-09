@@ -234,7 +234,7 @@ console.log(person.toString());
 
 Object builder
 
-```javascrpt
+```javascript
 class CodeBuilder
 {
   constructor(className='Foo')
