@@ -317,3 +317,61 @@ let jane = EmployeeFactory.newAuxOfficeEmployee('Jane', 222);
 console.log(john.toString());
 console.log(jane.toString());
 ```
+
+## Exersize
+
+Given the definitions shown in code, you are asked to implement ```Line.deepCopy()``` to perform a deep copy of the given ```Line``` object. This method should return a copy of a Line that contains copies of its start/end points.
+
+```javascript
+class Point
+{
+  constructor(x, y)
+  {
+    this.x = x;
+    this.y = y;
+  }
+}
+
+class Line
+{
+  constructor(start, end)
+  {
+    this.start = start;
+    this.end = end;
+  }
+
+  deepCopy()
+  {
+    let newStart = new Point(this.start.x, this.start.y);
+    let newEnd = new Point(this.end.x, this.end.y);
+    return new Line(newStart, newEnd);
+  }
+}
+
+describe('prototype', function()
+{
+  it('test', function()
+  {
+    let line1 = new Line(
+      new Point(3, 3),
+      new Point(10, 10)
+    );
+
+    let line2 = line1.deepCopy();
+    line1.start.x = line1.end.x =
+      line1.end.x = line1.end.y = 0;
+
+    expect(line2.start.x).toEqual(3);
+    expect(line2.start.y).toEqual(3);
+    expect(line2.end.x).toEqual(10);
+    expect(line2.end.y).toEqual(10);
+  });
+});
+```
+
+## Conclusion
+
+- To implement a ptototype, partially construct an object and store it somewhere
+- Deep copy the prototype
+- Customize the resulting instance
+- A factory ptovides a convenient API for using prototypes
